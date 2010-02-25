@@ -1,0 +1,82 @@
+set ignorecase
+set smartcase
+set hidden
+set nowrap
+set ruler
+set grepprg=ack\ -a
+set grepformat=%f:%l:%m
+set sts=2
+set smarttab
+set shiftwidth=2
+set tabstop=2
+set autoindent
+set expandtab
+set number
+set hlsearch
+set incsearch
+set history=1000
+set wildmode=list:longest
+set scrolloff=5
+set lines=43
+set columns=130
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set cursorline
+set backspace=indent,eol,start
+set guicursor=a:blinkon0
+if has("gui_running")
+  set guioptions=egmrt
+endif
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+highlight CursorLine guibg=#eeeeee
+autocmd FileType python set tabstop=4
+
+
+let NERDTreeIgnore=['\~$', '\.pyc$']
+
+" Functions
+function! ToggleScratch()
+  if expand('%') == g:ScratchBufferName
+    quit
+  else
+    Sscratch
+  endif
+endfunction
+
+" remap
+let mapleader = ","
+map <leader>s :call ToggleScratch()<CR>
+nmap <silent> <leader>l :set list!<CR>
+map <leader>t :FuzzyFinderTextMate<CR>
+map <leader>b :FuzzyFinderBuffer<CR>
+map <silent> <C-N> :silent noh<CR>
+map <leader>n :NERDTreeToggle<CR>
+nmap <leader>T :TlistToggle<CR>
+map <D-r> :!spec % <CR>
+map <D-R> :!spec % -l<C-R>=line('.')<CR> <CR>
+
+vmap gl :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+map <S-F5> :ruby finder.rescan!<ENTER>
+map <Tab><Tab> <C-W>w
+map <S-Tab><S-Tab> <C-W>W
+imap <C-L> <Space>=><Space>
+map <F1> <ESC>
+imap <F1> <ESC>
+map <C-T> :tabnew<CR>
+imap <C-T> <ESC>:tabnew<CR>
+
+colorscheme torte
+
+if version >= 700
+  hi CursorLine guibg=#2d2d2d
+  hi CursorColumn guibg=#2d2d2d
+  hi MatchParen guifg=#f6f3e8 guibg=#857b6f gui=bold
+  hi Pmenu   guifg=#f6f3e8 guibg=#2d2d2d
+  hi PmenuSel  guifg=#BBBBBB guibg=#666666
+  let g:fuzzy_ceiling="10_000"
+  let g:fuzzy_ignore="log/**;coverage/**;tmp/**;public/images/**;public/system/**;doc/**;script/**;solr/**;public/secure_photos/**"
+  let g:fuzzy_matching_limit="10"
+  let g:fuzzy_enumerating_limit="10"
+endif
