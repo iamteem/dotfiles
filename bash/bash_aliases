@@ -6,6 +6,8 @@ alias la='ls -al'
 alias rm='rm -i'
 alias o=open
 alias gvim='gvim > /dev/null 2>&1'
+alias mvim='mvim > /dev/null 2>&1'
+alias m='mate -w'
 alias gs='git status'
 alias gst='git status'
 alias gco='git co'
@@ -28,3 +30,4 @@ alias pp='parkplace'
 
 alias node-repl="rlwrap node-repl"
 alias rails3-mode="rvm use ree%rails3beta"
+alias cl=clear
