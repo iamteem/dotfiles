@@ -17,8 +17,8 @@ set incsearch
 set history=1000
 set wildmode=list:longest
 set scrolloff=5
-set lines=43
-set columns=130
+set lines=50
+set columns=200
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set cursorline
 set backspace=indent,eol,start
@@ -70,11 +70,13 @@ imap <C-T> <ESC>:tabnew<CR>
 colorscheme torte
 
 if version >= 700
-  hi CursorLine guibg=#2d2d2d
-  hi CursorColumn guibg=#2d2d2d
-  hi MatchParen guifg=#f6f3e8 guibg=#857b6f gui=bold
-  hi Pmenu   guifg=#f6f3e8 guibg=#2d2d2d
-  hi PmenuSel  guifg=#BBBBBB guibg=#666666
+  hi Cursor       guifg=bg     guibg=LightGoldenrod
+  hi CursorLine   guibg=Grey10
+  hi CursorColumn guibg=Grey10
+  hi MatchParen   guibg=#857b6f gui=bold
+  hi Pmenu        guifg=#f6f3e8 guibg=#2d2d2d
+  hi PmenuSel     guifg=#BBBBBB guibg=#666666
+  hi Todo         guibg=None    guifg=Orange
   let g:fuzzy_ceiling="10_000"
   let g:fuzzy_ignore="log/**;coverage/**;tmp/**;public/images/**;public/system/**;doc/**;script/**;solr/**;public/secure_photos/**"
   let g:fuzzy_matching_limit="10"
