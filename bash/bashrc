@@ -25,6 +25,11 @@ else
   fi
 fi
 
+if [ -d /usr/local/mysql/bin ]; then
+  export PATH=/usr/local/mysql/bin:$PATH
+fi
+
+
 # rvm
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
