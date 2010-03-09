@@ -24,10 +24,11 @@ alias gre='git rebase'
 alias sc='./script/console'
 alias ss='./script/server'
 alias dj='django-admin.py'
+alias sf='cd ~/code/sinefunc'
 alias sg='script/generate'
 alias lt='cd ~/code/sinefunc/lt'
+alias bs='cd ~/code/sinefunc/boughtstuff'
 alias pp='parkplace'
 
 alias node-repl="rlwrap node-repl"
-alias rails3-mode="rvm use ree%rails3beta"
 alias cl=clear
