@@ -2,6 +2,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ls='ls -G'
+alias l='ls -l'
+alias ll='ls -l'
 alias la='ls -al'
 alias rm='rm -i'
 alias o=open
@@ -26,9 +28,15 @@ alias ss='./script/server'
 alias dj='django-admin.py'
 alias sf='cd ~/code/sinefunc'
 alias sg='script/generate'
-alias lt='cd ~/code/sinefunc/lt'
-alias bs='cd ~/code/sinefunc/boughtstuff'
+alias cdlt='cd ~/code/sinefunc/lt'
+alias cdbs='cd ~/code/sinefunc/boughtstuff'
 alias pp='parkplace'
 
 alias node-repl="rlwrap node-repl"
 alias cl=clear
+
+alias ea='vi ~/bin/dotfiles/bash/bash_aliases && source ~/bin/dotfiles/bash/bash_aliases'
+
+function gc {
+  git commit -m "$*"
+}
