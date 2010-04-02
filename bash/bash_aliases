@@ -33,6 +33,8 @@ alias cds='cd ~/code/sinefunc'
 alias cdbs='cd ~/code/sinefunc/boughtstuff'
 alias pp='parkplace'
 alias rvm_en='source $HOME/.rvm/scripts/rvm'
+alias monggr_env='source $HOME/py_envs/monggr/bin/activate'
+alias dj_env='source $HOME/py_envs/django1.1/bin/activate'
 
 alias node-repl="rlwrap node-repl"
 alias cl=clear

@@ -46,15 +46,11 @@ if [[ "$unamestr" == 'Linux' ]]; then
   export EDITOR='gvim -f > /dev/null 2>&1'
 else
   export EDITOR='mvim -f'
-  export MANPATH=/opt/local/share/man:$MANPATH
   # Setting PATH for MacPython 2.5
   # The orginal version is saved in .bash_login.pysave
   PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
-  export PATH=$HOME/dev/tools:/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:$PATH
+  export PATH=$HOME/dev/tools:$PATH
   export PYTHONPATH=$HOME/dev/toolbox/python:$PYTHONPATH
-  if [ -f /opt/local/etc/bash_completion.d/git ]; then
-    source /opt/local/etc/bash_completion.d/git
-  fi
 fi
 
 if [ -d /usr/local/mysql/bin ]; then
@@ -64,10 +60,10 @@ fi
 
 # rvm
 # if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
-export PATH=/opt/ruby191/bin:$PATH
 
-if [ -f /opt/local/etc/bash_completion ]; then
-  source /opt/local/etc/bash_completion
+# ruby19
+if [ -d /opt/ruby191/bin ]; then
+  export PATH=/opt/ruby191/bin:$PATH
 fi
 
 # aliases
