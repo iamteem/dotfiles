@@ -1,3 +1,6 @@
 [ui]
 username = Tim Medina <iamteem@gmail.com>
 editor = vi
+
+[extensions]
+color =

@@ -26,7 +26,7 @@ set guicursor=a:blinkon0
 if has("gui_running")
   set guioptions=egmrt
   if has("gui_macvim")
-    set guifont=DejaVu\ Sans\ Mono:h13.00
+    set guifont=Droid\ Sans\ Mono:h14.00
   endif
 endif
 syntax on
@@ -73,7 +73,8 @@ map <C-T> :tabnew<CR>
 imap <C-T> <ESC>:tabnew<CR>
 set pastetoggle=<F2>
 
-colorscheme torte
+colorscheme ir_black
+
 
 if version >= 700
   hi Cursor       guifg=bg     guibg=LightGoldenrod

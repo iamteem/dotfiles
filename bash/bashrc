@@ -1,3 +1,5 @@
+PATH=/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH
+
 # $HOME/bin
 if [ -d $HOME/bin ]; then
   export PATH=$HOME/bin:$PATH
@@ -46,24 +48,18 @@ if [[ "$unamestr" == 'Linux' ]]; then
   export EDITOR='gvim -f > /dev/null 2>&1'
 else
   export EDITOR='mvim -f'
-  # Setting PATH for MacPython 2.5
-  # The orginal version is saved in .bash_login.pysave
-  PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
-  export PATH=$HOME/dev/tools:$PATH
-  export PYTHONPATH=$HOME/dev/toolbox/python:$PYTHONPATH
 fi
 
 if [ -d /usr/local/mysql/bin ]; then
   export PATH=/usr/local/mysql/bin:$PATH
 fi
 
-
 # rvm
 # if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
 # ruby19
-if [ -d /opt/ruby191/bin ]; then
-  export PATH=/opt/ruby191/bin:$PATH
+if [ -d /usr/local/ruby191/bin ]; then
+  export PATH=/usr/local/ruby191/bin:$PATH
 fi
 
 # aliases
@@ -77,3 +73,7 @@ if [[ "$__PLATFORM__" == "Darwin" ]]; then
 fi
 
 eval `pip completion --bash`
+
+CLICOLOR=1
+LSCOLORS=HxGxcxdxCxcgcdabagacad
+export CLICOLOR LSCOLORS
