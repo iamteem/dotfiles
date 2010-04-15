@@ -1,0 +1,3 @@
+source ~/bin/dotfiles/shells/common
+source ~/bin/dotfiles/shells/bash/ui
+

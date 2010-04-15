@@ -8,6 +8,7 @@ alias la='ls -al'
 alias rm='rm -i'
 alias o=open
 alias gvim='gvim > /dev/null 2>&1'
+alias vim='gvim > /dev/null 2>&1'
 alias mvim='mvim > /dev/null 2>&1'
 alias m='mate -w'
 alias gs='git status'
@@ -40,8 +41,7 @@ alias pg_stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 alias node-repl="rlwrap node-repl"
 alias cl=clear
-
-alias ea='vi ~/bin/dotfiles/bash/bash_aliases && source ~/bin/dotfiles/bash/bash_aliases'
+alias ea='vi ~/bin/dotfiles/shells/bash/bash_aliases && source ~/bin/dotfiles/shells/bash/bash_aliases'
 
 function gc {
   git commit -m "$*"

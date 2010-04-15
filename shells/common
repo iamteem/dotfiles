@@ -1,0 +1,23 @@
+# Paths
+if [ -d /Library/Frameworks/Python.framework/Versions/Current/bin ]; then
+  PATH=/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH
+fi
+if [ -d $HOME/bin ]; then
+  PATH=$HOME/bin:$PATH
+fi
+if [ -d /usr/local/mysql/bin ]; then
+  PATH=/usr/local/mysql/bin:$PATH
+fi
+if [ -d /usr/local/ruby191/bin ]; then
+  PATH=/usr/local/ruby191/bin:$PATH
+fi
+export PATH
+export LC_CTYPE=en_US.UTF-8
+
+eval `pip completion --bash`
+
+# aliases
+if [ -f ~/bin/dotfiles/bash/bash_aliases ]; then
+  source ~/bin/dotfiles/bash/bash_aliases
+fi
+
