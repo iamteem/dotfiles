@@ -33,7 +33,3 @@ bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 
 export PS1="\[$txtylw\]\u \[$txtgrn\]\W\[$txtred\] \$(vcprompt)\[$txtwht\]$ \[$txtrst\]"
-
-CLICOLOR=1
-LSCOLORS=HxGxcxdxCxcgcdabagacad
-export CLICOLOR LSCOLORS

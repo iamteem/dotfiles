@@ -17,7 +17,11 @@ export LC_CTYPE=en_US.UTF-8
 eval `pip completion --bash`
 
 # aliases
-if [ -f ~/bin/dotfiles/bash/bash_aliases ]; then
-  source ~/bin/dotfiles/bash/bash_aliases
+if [ -f ~/bin/dotfiles/shells/bash/bash_aliases ]; then
+  source ~/bin/dotfiles/shells/bash/bash_aliases
 fi
 
+# common ls
+CLICOLOR=1
+LSCOLORS=HxGxcxdxCxcgcdabagacad
+export CLICOLOR LSCOLORS

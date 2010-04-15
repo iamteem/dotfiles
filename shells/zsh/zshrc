@@ -1,6 +1,8 @@
 source ~/bin/dotfiles/shells/common
 source ~/bin/dotfiles/shells/zsh/ui
+source ~/bin/dotfiles/shells/zsh/aliases
 
+# got from p3epcode sc
 #############################
 # Other Options
 
@@ -8,6 +10,7 @@ source ~/bin/dotfiles/shells/zsh/ui
 
 setopt CORRECT
 setopt CORRECTALL
+setopt AUTO_CD
 
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
