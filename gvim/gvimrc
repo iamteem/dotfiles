@@ -66,6 +66,7 @@ vmap gl :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 map <S-F5> :ruby finder.rescan!<ENTER>
 map <Tab><Tab> <C-W>w
 map <S-Tab><S-Tab> <C-W>W
+nmap gm <C-W>\|<C-W>_
 imap <C-L> <Space>=><Space>
 map <F1> <ESC>
 imap <F1> <ESC>

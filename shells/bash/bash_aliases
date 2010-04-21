@@ -44,3 +44,5 @@ alias ea='vi ~/bin/dotfiles/shells/bash/bash_aliases && source ~/bin/dotfiles/sh
 function gc {
   git commit -m "$*"
 }
+alias stakestories="rstakeout 'monk stories' app/**/*.* test/**/*.rb"
+alias staketest="rstakeout 'monk test' app/**/*.* test/**/*.rb"
