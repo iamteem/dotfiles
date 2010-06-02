@@ -1,24 +1,23 @@
 set ignorecase
-set smartcase
+" set smartcase
 set hidden
 set nowrap
 set ruler
 set grepprg=ack\ -a
 set grepformat=%f:%l:%m
 set sts=2
-set smarttab
 set shiftwidth=2
 set tabstop=2
-set autoindent
+" set autoindent
 set expandtab
-set number
+" set number
 set hlsearch
 set incsearch
 set history=1000
 set wildmode=list:longest
 set scrolloff=5
 set lines=50
-set columns=200
+set columns=140
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set cursorline
 set backspace=indent,eol,start
@@ -26,18 +25,17 @@ set guicursor=a:blinkon0
 if has("gui_running")
   set guioptions=egmrt
   if has("gui_macvim")
-    set guifont=Droid\ Sans\ Mono:h14.00
+    set guifont=Inconsolata:h18.00
   endif
 endif
 syntax on
 filetype on
 filetype plugin on
-filetype indent on
+" filetype indent on
 highlight CursorLine guibg=#eeeeee
-autocmd FileType python set tabstop=4
-autocmd FileType python set shiftwidth=4
-autocmd FileType python set softtabstop=4
-
+" " au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
+" au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>75v.\+', -1)
+" au WinEnter * let w:m2=matchadd('ErrorMsg', '\%>75v.\+', -1)
 
 let NERDTreeIgnore=['\~$', '\.pyc$']
 
@@ -57,35 +55,19 @@ nmap <silent> <leader>l :set list!<CR>
 map <leader>t :FuzzyFinderTextMate<CR>
 map <leader>b :FuzzyFinderBuffer<CR>
 map <silent> <C-N> :silent noh<CR>
-map <leader>n :NERDTreeToggle<CR>
-nmap <leader>T :TlistToggle<CR>
-map <D-r> :!spec % <CR>
-map <D-R> :!spec % -l<C-R>=line('.')<CR> <CR>
+map <silent> <leader>n :NERDTreeToggle<CR>
+nmap <silent> <leader>T :TlistToggle<CR>
 
 vmap gl :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <S-F5> :ruby finder.rescan!<ENTER>
 map <Tab><Tab> <C-W>w
 map <S-Tab><S-Tab> <C-W>W
-nmap gm <C-W>\|<C-W>_
 imap <C-L> <Space>=><Space>
 map <F1> <ESC>
 imap <F1> <ESC>
-map <C-T> :tabnew<CR>
-imap <C-T> <ESC>:tabnew<CR>
 set pastetoggle=<F2>
 
 colorscheme ir_black
-
-
-if version >= 700
-  hi Cursor       guifg=bg     guibg=LightGoldenrod
-  hi CursorLine   guibg=Grey10
-  hi CursorColumn guibg=Grey10
-  hi MatchParen   guibg=#857b6f gui=bold
-  hi Pmenu        guifg=#f6f3e8 guibg=#2d2d2d
-  hi PmenuSel     guifg=#BBBBBB guibg=#666666
-  hi Todo         guibg=NONE    guifg=Orange
-endif
 
 let g:fuzzy_ceiling="1000"
 let g:fuzzy_ignore="log/**;coverage/**;tmp/**;public/images/**;public/system/**;doc/**;script/**;solr/**;public/secure_photos/**;vendor/**;*.pyc"
@@ -98,4 +80,3 @@ let g:surround_{char2nr("i")} = "{% if\1 \r..*\r &\1 %}\r{% endif %}"
 let g:surround_{char2nr("w")} = "{% with\1 \r..*\r &\1 %}\r{% endwith %}"
 let g:surround_{char2nr("c")} = "{% comment\1 \r..*\r &\1 %}\r{% endcomment %}"
 let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1 %}\r{% endfor %}"
-

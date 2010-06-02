@@ -46,3 +46,38 @@ function gc {
 }
 alias stakestories="rstakeout 'monk stories' app/**/*.* test/**/*.rb"
 alias staketest="rstakeout 'monk test' app/**/*.* test/**/*.rb"
+
+# http://discussions.apple.com/message.jspa?messageID=10310875
+alias slsmooth="defaults -currentHost write -globalDomain AppleFontSmoothing -int 2"
+
+function rbdoc {
+  open http://ruby-doc.org/core/classes/"$*".html
+}
+alias git=hub
+
+function ruby19-select-help {
+  echo "Usage: ruby19-select [1|2]"
+  echo
+  echo "1 - Selects `/usr/local/ruby191/bin/ruby --version`"
+  echo "2 - Selects `/usr/local/ruby192/bin/ruby --version`"
+  echo
+  echo "Current: `which ruby`"
+}
+
+function ruby19-select {
+  if [ $# -eq 0 ]; then
+      ruby19-select-help
+  else
+    if [ $1 -eq '1' ]; then
+      ln -snf /usr/local/ruby191 /usr/local/ruby19
+      ruby --version
+    else
+      if [ $1 -eq '2' ]; then
+        ln -snf /usr/local/ruby192 /usr/local/ruby19
+        ruby --version
+      else
+        ruby19-select-help
+      fi
+    fi
+  fi
+}

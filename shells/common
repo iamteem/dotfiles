@@ -11,6 +11,19 @@ fi
 if [ -d /usr/local/ruby191/bin ]; then
   PATH=/usr/local/ruby191/bin:$PATH
 fi
+if [ -d /usr/local/ruby192/bin ]; then
+  PATH=/usr/local/ruby192/bin:$PATH
+fi
+if [ -d /usr/local/ruby19/bin ]; then
+  PATH=/usr/local/ruby19/bin:$PATH
+fi
+if [ -d $HOME/bin/rip ]; then
+  export RUBYLIB="$RUBYLIB:$HOME/bin/rip/lib:."
+  PATH="$PATH:$HOME/bin/rip/bin"
+  eval `rip-config`
+fi
+
+
 export PATH
 export LC_CTYPE=en_US.UTF-8
 
@@ -25,3 +38,6 @@ fi
 CLICOLOR=1
 LSCOLORS=HxGxcxdxCxcgcdabagacad
 export CLICOLOR LSCOLORS
+export GOROOT=$HOME/go
+export GOOS=darwin
+export GOARCH=amd64
