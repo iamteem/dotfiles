@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/iamteem/Dropbox/code/sinefunc/monggr/redismodel'
+let g:netrw_dirhist_2='/Users/iamteem/tmp/proposals'
+let g:netrw_dirhist_3='/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages/django'
+let g:netrw_dirhist_4='/Users/iamteem/bin/dotfiles'
