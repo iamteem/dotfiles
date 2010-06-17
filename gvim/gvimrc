@@ -50,24 +50,24 @@ endfunction
 
 " remap
 let mapleader = ","
-map <leader>s :call ToggleScratch()<CR>
-nmap <silent> <leader>l :set list!<CR>
-map <unique> <silent> <Leader>t <Plug>PeepOpen
-"   map <leader>t :FuzzyFinderTextMate<CR>
-map <leader>b :FuzzyFinderBuffer<CR>
-
-map <silent> <C-N> :silent noh<CR>
-map <silent> <leader>n :NERDTreeToggle<CR>
-nmap <silent> <leader>T :TlistToggle<CR>
-
-vmap gl :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
-map <S-F5> :ruby finder.rescan!<ENTER>
-map <Tab><Tab> <C-W>w
-map <S-Tab><S-Tab> <C-W>W
-imap <C-L> <Space>=><Space>
-map <F1> <ESC>
+map  <silent> <leader>s :call ToggleScratch()<CR>
+map  <unique> <silent> <Leader>t <Plug>PeepOpen
+map  <silent> <unique> <Leader>cd <Plug>RooterChangeToRootDirectory
+map  <silent> <leader>b :FuzzyFinderBuffer<CR>
+map  <silent> <C-N> :silent noh<CR>
+map  <silent> <leader>n :NERDTreeToggle<CR>
+map  <silent> <S-F5> :ruby finder.rescan!<ENTER>
+map  <leader>l <C-W>l
+map  <leader>j <C-W>j
+map  <leader>k <C-W>k
+map  <leader>h <C-W>h
+map  <F1> <ESC>
 imap <F1> <ESC>
+nmap <silent> <leader>L :set list!<CR>
+vmap gl :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
 set pastetoggle=<F2>
+" map <leader>t :FuzzyFinderTextMate<CR>
 
 colorscheme ir_black
 
