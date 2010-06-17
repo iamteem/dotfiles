@@ -52,8 +52,10 @@ endfunction
 let mapleader = ","
 map <leader>s :call ToggleScratch()<CR>
 nmap <silent> <leader>l :set list!<CR>
-map <leader>t :FuzzyFinderTextMate<CR>
+map <unique> <silent> <Leader>t <Plug>PeepOpen
+"   map <leader>t :FuzzyFinderTextMate<CR>
 map <leader>b :FuzzyFinderBuffer<CR>
+
 map <silent> <C-N> :silent noh<CR>
 map <silent> <leader>n :NERDTreeToggle<CR>
 nmap <silent> <leader>T :TlistToggle<CR>

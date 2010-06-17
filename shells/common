@@ -41,3 +41,5 @@ export CLICOLOR LSCOLORS
 export GOROOT=$HOME/go
 export GOOS=darwin
 export GOARCH=amd64
+
+rvm_en

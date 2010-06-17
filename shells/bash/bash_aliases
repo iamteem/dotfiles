@@ -81,3 +81,4 @@ function ruby19-select {
     fi
   fi
 }
+alias t='ruby -Ilib:test'
