@@ -2,9 +2,15 @@
 if [ -d /Library/Frameworks/Python.framework/Versions/Current/bin ]; then
   PATH=/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH
 fi
+
 if [ -d $HOME/bin ]; then
   PATH=$HOME/bin:$PATH
 fi
+
+if [ -d $HOME/.cabal/bin ]; then
+  PATH=$HOME/.cabal/bin:$PATH
+fi
+
 if [ -d /usr/local/mysql/bin ]; then
   PATH=/usr/local/mysql/bin:$PATH
 fi
@@ -18,7 +24,7 @@ if [ -d /usr/local/ruby19/bin ]; then
   PATH=/usr/local/ruby19/bin:$PATH
 fi
 if [ -d $HOME/bin/rip ]; then
-  export RUBYLIB="$RUBYLIB:$HOME/bin/rip/lib:."
+  export RUBYLIB="$RUBYLIB:$HOME/bin/rip/lib"
   PATH="$PATH:$HOME/bin/rip/bin"
   eval `rip-config`
 fi
