@@ -25,17 +25,17 @@ alias gre='git rebase'
 alias sc='./script/console'
 alias ss='./script/server'
 alias dj='django-admin.py'
-alias sf='cd ~/code/sinefunc'
 alias sg='script/generate'
-alias cdlt='cd ~/code/sinefunc/lt'
-alias cds='cd ~/code/sinefunc'
-alias cdbs='cd ~/code/sinefunc/boughtstuff'
 alias pp='parkplace'
 alias rvm_en='source $HOME/.rvm/scripts/rvm'
 alias monggr_env='source $HOME/py_envs/monggr/bin/activate'
 alias dj_env='source $HOME/py_envs/django1.1/bin/activate'
 alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pg_stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
 
 alias node-repl="rlwrap node-repl"
 alias cl=clear
@@ -82,3 +82,13 @@ function ruby19-select {
   fi
 }
 alias t='ruby -Ilib:test'
+alias ev='`$EDITOR` ~/.gvimrc'
+alias "brew.mongo"='mongod run --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongod.conf'
+alias "brew.mysql.server"='mysql.server start'
+alias rc="rails c"
+alias rs="rails s"
+
+function goog {
+  open `ruby -rcgi -e "puts \"http://google.com/search?q=#{CGI.escape(ARGV.join(' '))}\"" $*`
+}
+

@@ -10,14 +10,14 @@ set shiftwidth=2
 set tabstop=2
 " set autoindent
 set expandtab
-" set number
+set number
 set hlsearch
 set incsearch
 set history=1000
 set wildmode=list:longest
 set scrolloff=5
 set lines=50
-set columns=140
+set columns=200
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set cursorline
 set backspace=indent,eol,start
@@ -25,17 +25,19 @@ set guicursor=a:blinkon0
 if has("gui_running")
   set guioptions=egmrt
   if has("gui_macvim")
-    set guifont=Inconsolata:h18.00
+    set guifont=Droid\ Sans\ Mono:h20.00
   endif
 endif
 syntax on
 filetype on
 filetype plugin on
 " filetype indent on
-highlight CursorLine guibg=#eeeeee
+" highlight CursorLine guibg=#eeeeee
 " " au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
 " au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>75v.\+', -1)
 " au WinEnter * let w:m2=matchadd('ErrorMsg', '\%>75v.\+', -1)
+au BufRead,BufNewFile *.haml* set filetype=haml
+au BufRead,BufNewFile *.slim* set filetype=slim
 
 let NERDTreeIgnore=['\~$', '\.pyc$']
 
@@ -85,10 +87,47 @@ let g:surround_{char2nr("c")} = "{% comment\1 \r..*\r &\1 %}\r{% endcomment %}"
 let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1 %}\r{% endfor %}"
 
 " Highlight extra whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
+highlight ExtraWhitespace ctermbg=red guibg=#fff600
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" function to delete all hidden buffers
+function! Wipeout()
+  " list of *all* buffer numbers
+  let l:buffers = range(1, bufnr('$'))
+
+  " what tab page are we in?
+  let l:currentTab = tabpagenr()
+  try
+    " go through all tab pages
+    let l:tab = 0
+    while l:tab < tabpagenr('$')
+      let l:tab += 1
+
+      " go through all windows
+      let l:win = 0
+      while l:win < winnr('$')
+        let l:win += 1
+        " whatever buffer is in this window in this tab, remove it from
+        " l:buffers list
+        let l:thisbuf = winbufnr(l:win)
+        call remove(l:buffers, index(l:buffers, l:thisbuf))
+      endwhile
+    endwhile
+
+    " if there are any buffers left, delete them
+    if len(l:buffers)
+      execute 'bwipeout' join(l:buffers)
+    endif
+  finally
+    " go back to our original tab page
+    execute 'tabnext' l:currentTab
+  endtry
+endfunction
+
+" mapping for function above
+map <C-W>x :call Wipeout()<CR>
 

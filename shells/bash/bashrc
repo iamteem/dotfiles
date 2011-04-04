@@ -1,3 +1,4 @@
 source ~/bin/dotfiles/shells/common
 source ~/bin/dotfiles/shells/bash/ui
+# source ~/bin/dotfiles/sheels/bash/completion/*
 

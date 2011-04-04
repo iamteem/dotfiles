@@ -3,6 +3,10 @@ if [ -d /Library/Frameworks/Python.framework/Versions/Current/bin ]; then
   PATH=/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH
 fi
 
+if [ -d /usr/local/sbin ]; then
+  PATH=/usr/local/sbin:$PATH
+fi
+
 if [ -d $HOME/bin ]; then
   PATH=$HOME/bin:$PATH
 fi
@@ -29,11 +33,16 @@ if [ -d $HOME/bin/rip ]; then
   eval `rip-config`
 fi
 
+if [ -d /usr/local/share/npm/bin ]; then
+  PATH="/usr/local/share/npm/bin:$PATH"
+fi
 
 export PATH
 export LC_CTYPE=en_US.UTF-8
 
-eval `pip completion --bash`
+if [ -x "pip" ]; then
+  eval `pip completion --bash`
+fi
 
 # aliases
 if [ -f ~/bin/dotfiles/shells/bash/bash_aliases ]; then
@@ -47,5 +56,6 @@ export CLICOLOR LSCOLORS
 export GOROOT=$HOME/go
 export GOOS=darwin
 export GOARCH=amd64
+export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
 
 rvm_en

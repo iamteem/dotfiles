@@ -1,0 +1,27 @@
+snippet html
+	%html${1}
+		${2}
+snippet body
+	%body${1}
+		${2}
+snippet head
+	%head${1}
+		${2}
+snippet title
+	%title${1}
+		${2}
+snippet script
+	:javascript
+		${1}
+snippet div
+	%div${1}
+		${2}
+snippet meta
+	%meta{:name => "${1:name}", :content => "${2:content}"}
+	${3}
+snippet link
+	%link{:rel => "${1:stylesheet}", :href => "${2:/css/master.css}", :type => "${3:text/css}", :media => "${4:screen}", :charset => "utf-8"${5}}
+	${6}
+snippet link
+	%link(rel="${1:stylesheet}" href="${2:/css/master.css}" type="${3:text/css}" media="${4:screen}" charset="utf-8")
+	${5}
