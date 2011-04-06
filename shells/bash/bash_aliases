@@ -57,6 +57,7 @@ alias "brew.mongo"='mongod run --config /usr/local/Cellar/mongodb/1.6.5-x86_64/m
 alias "brew.mysql.server"='mysql.server start'
 alias rc="rails c"
 alias rs="rails s"
+alias rg="rails g"
 
 function goog {
   open `ruby -rcgi -e "puts \"http://google.com/search?q=#{CGI.escape(ARGV.join(' '))}\"" $*`
