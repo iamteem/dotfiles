@@ -17,17 +17,13 @@ set history=1000
 set wildmode=list:longest
 set scrolloff=5
 set lines=50
-set columns=200
+set columns=165
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set cursorline
 set backspace=indent,eol,start
 set guicursor=a:blinkon0
-if has("gui_running")
-  set guioptions=egmrt
-  if has("gui_macvim")
-    set guifont=Droid\ Sans\ Mono:h20.00
-  endif
-endif
+set guifont=Droid\ Sans\ Mono:h16
+
 syntax on
 filetype on
 filetype plugin on
@@ -52,10 +48,10 @@ endfunction
 
 " remap
 let mapleader = ","
-map  <silent> <leader>s :call ToggleScratch()<CR>
+" map  <silent> <leader>s :call ToggleScratch()<CR>
 map  <unique> <silent> <Leader>t <Plug>PeepOpen
 map  <silent> <unique> <Leader>cd <Plug>RooterChangeToRootDirectory
-map  <silent> <leader>b :FuzzyFinderBuffer<CR>
+map  <silent> <leader>b :FufBuffer<CR>
 map  <silent> <C-N> :silent noh<CR>
 map  <silent> <leader>n :NERDTreeToggle<CR>
 map  <silent> <S-F5> :ruby finder.rescan!<ENTER>
@@ -71,8 +67,7 @@ vmap gl :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 set pastetoggle=<F2>
 " map <leader>t :FuzzyFinderTextMate<CR>
 
-
-colorscheme ir_black
+color dw_green
 
 let g:fuzzy_ceiling="1000"
 let g:fuzzy_ignore="log/**;coverage/**;tmp/**;public/images/**;public/system/**;doc/**;script/**;solr/**;public/secure_photos/**;vendor/**;*.pyc"
