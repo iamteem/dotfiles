@@ -67,7 +67,7 @@ vmap gl :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 set pastetoggle=<F2>
 " map <leader>t :FuzzyFinderTextMate<CR>
 
-color dw_green
+color solarized
 
 let g:fuzzy_ceiling="1000"
 let g:fuzzy_ignore="log/**;coverage/**;tmp/**;public/images/**;public/system/**;doc/**;script/**;solr/**;public/secure_photos/**;vendor/**;*.pyc"
