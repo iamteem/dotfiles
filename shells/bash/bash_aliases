@@ -66,3 +66,13 @@ function goog {
 function rbdoc {
   open http://ruby-doc.org/core/classes/"$*".html
 }
+alias gg='git push'
+function glhf {
+  git branch | grep $* > /dev/null
+  if [ '0' == "$?" ]; then
+    git checkout $*
+  else
+    git checkout -b $*
+  fi
+}
+
